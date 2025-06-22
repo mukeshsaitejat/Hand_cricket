@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowling</title>
+</head>
+<body>
+    <div class="como">
+        <h1>YOU ARE BOWLING</h1>
+    <div class="cont">
+        <button onclick="f1();">1</button>
+        <button onclick="f2()">2</button>
+        <button onclick="f3()">3</button>
+        <button onclick="f4()">4</button>
+        <button onclick="f5()">5</button><br><br><br>
+        <button onclick="f6()">6</button>
+        <button onclick="f7()">7</button>
+        <button onclick="f8()">8</button>
+        <button onclick="f9()">9</button>
+        <button onclick="f10()">10</button>
+    </div>
+</div>
+<script>
+    
+    
+
+    let score1=0;
+    
+                 function f1(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==1){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1}`)
+                    final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();}checkWin();}
+
+            function f2(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==2){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1} `)
+                    final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();checkWin();}}
+            function f3(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==3){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1} `)
+                   final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();checkWin();}}
+            function f4(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==4){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1} `)
+                    final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();checkWin();}}
+                function f5(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==5){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1} `)
+                    final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();checkWin();}}
+
+                function f6(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==6){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1}`)
+                    final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();checkWin();}}
+
+                function f7(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==7){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1}`)
+                    final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();checkWin();}}
+
+                function f8(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==8){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1}`)
+                    final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();checkWin();}}
+            function f9(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==9){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1}`)
+                    final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();checkWin();}}
+            function f10(){
+                    const num= Math.floor(Math.random() * 11);
+                    console.log(`computer choosed'${num}`);
+                    if(num==10){
+                    alert(`computer choosed ${num} so, computer is OUT!!!, computer score :${score1}`)
+                    final();
+            }
+            else{
+                score1=score1+num;
+                alert(`computer choosed ${num} , computer score is ${score1}`); quit();checkWin();}}
+
+                
+function final() {
+    let battingscore = localStorage.getItem("battingscore");
+    let bowlingscore = localStorage.setItem("bowlingscore",score1);
+     battingscore = parseInt(localStorage.getItem("battingscore")) || null;
+     bowlingscore = parseInt(localStorage.getItem("bowlingscore")) || null;
+
+    // If batting score is not set, store it and switch to bowling
+    if (battingscore === null && bowlingscore===null) {
+        localStorage.setItem("bowlingscore",score1);
+        console.log("Bowling score set:", localStorage.getItem("bowlingscore"));
+        
+        return;
+    }
+   else if (bowlingscore!=null && battingscore=== null) {
+        localStorage.setItem("bowlingscore", score1);
+         console.log("Bowling score set:", localStorage.getItem("bowlingscore"));
+        alert("Now it's your turn to bat!");
+        window.location.href = "batting.html"; 
+        return;
+    }
+    else if(battingscore!=null && bowlingscore!=null){
+        if (battingscore > bowlingscore) {
+        alert('HURRAY! YOU WON THE MATCH 🎉');
+        localStorage.clear();
+        window.location.href = "odd or even.html";
+    } else if (battingscore < bowlingscore) {
+        alert('OOPS! You lost. Better luck next time 😢');
+        localStorage.clear();
+        window.location.href = "odd or even.html";
+    } else {
+        alert("It's a tie! What a match! 🤝");
+        localStorage.clear();
+        window.location.href = "odd or even.html";
+    }
+        localStorage.clear();}
+}
+function checkWin() {
+    function checkWin() {
+    let battingscore = parseInt(localStorage.getItem("battingscore"));
+    let bowlingscore = score1; // use the current score, not from storage
+
+    if (!isNaN(battingscore) && !isNaN(bowlingscore)) {
+        if (bowlingscore > battingscore) {
+            alert('OOPS! You lost. Better luck next time 😢');
+            localStorage.clear();
+            window.location.href = "odd or even.html";
+        } else if (bowlingscore === battingscore) {
+            alert("It's a tie! What a match! 🤝");
+            localStorage.clear();
+            window.location.href = "odd or even.html";
+        }
+    }
+}
+
+}
+function quit(){
+    let battingscore = parseInt(localStorage.getItem("battingscore"));
+        let bowlingscore = parseInt(localStorage.getItem("bowlingscore"));
+        battingscore = localStorage.getItem("battingscore");
+         bowlingscore = localStorage.setItem("bowlingscore",score1);
+         
+    if(battingscore!=null && bowlingscore!=null){
+        if (battingscore > bowlingscore) {
+        alert('HURRAY! YOU WON THE MATCH 🎉');
+        localStorage.clear();
+        window.location.href = "odd or even.html";
+    } 
+    }}
+    </script>
+    <style>
+        H1{
+                text-align: center;
+            }
+    button{
+    width: 80px;
+height: 80px;
+border-radius: 50%;
+background-color: black;
+border: 3px solid #757575;
+font-size: 18px;
+font-weight: bold;
+color: white;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+cursor: pointer;
+margin:20px;}
+button:hover{
+background-color: #757575;
+border: 3px solid black;
+color:white;
+}
+.cont{
+border: solid black;
+position: relative;
+top: 140px;
+justify-self: center;
+border-radius: 20px;
+backdrop-filter: blur(10px);
+}
+.como{
+background-image: url('https://gutshotmagazine.com/fantasy-sports/wp-content/uploads/2021/09/MTC-2.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 100vh;
+margin: 0;
+}
+</style>
+</body>
+</html>

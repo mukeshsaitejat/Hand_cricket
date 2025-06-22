@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start</title>
+</head>
+<body>
+    <div class="cont">
+        <h1>LETS PLAY HAND CRICKET</h1>
+    <div class="como">
+    <button  onclick="f1()">ODD</button>
+    <button onclick="f2()">even</button><br><br>
+    <button id="bat" disabled onclick="
+    window.location.href='batting.html'
+    ">batting</button>
+    <button id="bowl" disabled onclick="
+    window.location.href='balling.html'
+    ">bowling</button></div>
+    </div>
+
+    
+<script>
+    function f1(){
+        const a=prompt('enter a number between 1 to 10');
+            const comp= Math.floor(Math.random() * 11);
+            const num=Math.random();
+            const b=a+comp;
+            if(b%2==0){
+                alert('you lost the toss')
+                if(num>0 && num<=0.5){
+                    alert('computer choosed  to bowl first, click here to play:')
+                    window.location.href='batting.html'
+                    }
+                
+                else if(num>0.5 && num<=1){
+                    alert('computer choosed to bat first')
+                    window.location.href='balling.html'
+                }}
+            else{
+                alert('you won the toss!!! choose what do you want')
+                document.getElementById("bat").disabled=false;
+                document.getElementById("bowl").disabled=false;
+                
+            }}
+
+            function f2(){
+            const a=prompt('enter a number between 1 to 10');
+            const comp= Math.floor(Math.random() * 11);
+            const num=Math.random();
+            const b=a+comp;
+            if(b%2!=0){
+                alert('you lost the toss')
+                if(num>0 && num<=0.5){
+                    alert('computer choosed  to ball first')
+                    window.location.href='batting.html'
+                    }
+                
+                else if(num>0.5 && num<=1){
+                    alert('computer choosed to bat first')
+                    window.location.href='balling.html'
+                }}
+            else{
+                alert('you won the toss!!! choose what do you want')
+                document.getElementById("bat").disabled=false;
+                document.getElementById("bowl").disabled=false;
+                
+            }
+
+            }
+</script>
+<style>
+    H1{
+        text-align: center;
+        color: aliceblue;
+        padding-top: 30px;
+    }
+    .como{
+    border: solid black;
+    position: relative;
+    top: 140px;
+    justify-self: center;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+  }
+button{width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: black;
+    border: 3px solid #757575;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin:20px;}
+    button:hover{
+      background-color: #757575;
+      border: 3px solid black;
+      color:white;}
+      .cont{
+background-image: url('https://static.vecteezy.com/system/resources/previews/023/224/016/non_2x/cricket-championship-concept-with-character-illustration-of-a-batter-in-blue-jersey-stadium-background-and-space-for-your-text-vector.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 100vh;
+margin: 0;
+}</style>
+     
+</body>
+</html>
